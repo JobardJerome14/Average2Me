@@ -19,7 +19,6 @@ public class MainActivity extends ActivityBase {
     Button sport_btn;
     Button food_btn;
     Button medley_btn;
-
     SharedP sharedP;
 
     @Override
@@ -71,13 +70,10 @@ public class MainActivity extends ActivityBase {
 
 
     public void play_average(String categoryId) {
-        //Bundle bundle = new Bundle();
-        //bundle.putString("category", category);
-
         this.sharedP.setCategoryId(categoryId);
         navigate(AskActivity.class, null);
 
-        new FBevent(this, IFBEvent.CLIC_EVENT, IFBEvent.BUTTON_KEY, "ask_activity");
+        new FBevent(this, IFBEvent.CLICK_EVENT, IFBEvent.BUTTON_KEY, "ask_activity");
     }
 
 }
