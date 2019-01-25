@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">AverageMe</string>
+
+
+    <!-- Main activity -->
+    <string name="main_activity_title">Choisis ton thème</string>
+    <string name="sport_btn_label">Sport</string>
+    <string name="food_btn_label">Nourriture</string>
+    <string name="medley_btn_label">Mélange</string>
+    <string name="politique_btn_label">Politique</string>
+
+
+    <!-- Ask activity -->
+    <string name="ask_activity_title">Question</string>
+    <string name="ask_btn_a">A</string>
+    <string name="ask_btn_b">B</string>
+
+
+    <!-- Answer activity -->
+    <string name="answer_activity_title">Résultat</string>
+    <string name="answer_btn_next">Question suivante</string>
+    <string name="answer_btn_back_to_menu">Retour au menu</string>
+
+    <!-- Fragment dialog strings -->
+
+
+    <!-- API Toasts -->
+    <string name="api_new_game_impossible">Chargement nouvelle partie impossible</string>
+
+</resources>

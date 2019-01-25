@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="?android:attr/buttonBarStyle"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/category_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cl_layout"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/ask_activity_title"/>
+
+
+    <TextView
+        android:id="@+id/ask_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_label"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_layout"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/clr_btn_a"
+            android:textColor="@color/my_white"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/clr_btn_b"
+            android:textColor="@color/my_white"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

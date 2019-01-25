@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="my_white">#ffffff</color>
+
+    <!--AskActivity-->
+    <color name="clr_btn_a">#FE7484</color>
+    <color name="clr_btn_b">#25f177</color>
+
+    <!--MainActivity-->
+    <color name="btn_1_background">#FE7484</color>
+    <color name="btn_2_background">#25f177</color>
+    <color name="btn_3_background">#d274fe</color>
+    <color name="btn_4_background">#feab74</color>
+</resources>

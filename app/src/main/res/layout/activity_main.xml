@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/normal_size"
+        android:text="@string/main_activity_title" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_title">
+
+            <Button
+                android:id="@+id/sport_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_1_background"
+                android:padding="@dimen/normal_size"
+                android:text="@string/sport_btn_label"
+                android:textAllCaps="false"
+                android:textColor="@color/my_white" />
+
+            <Button
+                android:id="@+id/politic_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_3_background"
+                android:padding="@dimen/normal_size"
+                android:text="@string/politique_btn_label"
+                android:textAllCaps="false"
+                android:textColor="@color/my_white" />
+
+            <Button
+                android:id="@+id/food_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_2_background"
+                android:padding="@dimen/normal_size"
+                android:text="@string/food_btn_label"
+                android:textAllCaps="false"
+                android:textColor="@color/my_white" />
+
+            <Button
+                android:id="@+id/medley_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_4_background"
+                android:padding="@dimen/normal_size"
+                android:text="@string/medley_btn_label"
+                android:textAllCaps="false"
+                android:textColor="@color/my_white" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
