@@ -28,9 +28,6 @@ public class API {
 
     private IApi iApi;
 
-    /**
-     *
-     */
     public API() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -55,7 +52,7 @@ public class API {
             public void onResponse(@NonNull Call<Ask> call, @NonNull Response<Ask> response) {
                 if (response.isSuccessful()) {
                     Ask ask = response.body();
-                    resultatCallback.onWaitingResultat(ask);
+                    resultatCallback.onWaitingResult(ask);
                 } else {
                     report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
@@ -78,7 +75,7 @@ public class API {
             public void onResponse(@NonNull Call<RetourUpdate> call, @NonNull Response<RetourUpdate> response) {
                 if (response.isSuccessful()) {
                     RetourUpdate retourUpdate = response.body();
-                    resultatCallback.onWaitingResultat(retourUpdate);
+                    resultatCallback.onWaitingResult(retourUpdate);
                 } else {
                     report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
@@ -94,14 +91,10 @@ public class API {
     }
 
 
-
-
     private void report_firebase_API_crash(String key, String value) {
         //TODO
         new FBevent(MyApplication.getContext(), IFBEvent.CRASH_EVENT, key, value);
     }
-
-
 
 }
 

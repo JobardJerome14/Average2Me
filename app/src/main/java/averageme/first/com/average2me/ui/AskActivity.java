@@ -19,32 +19,25 @@ public class AskActivity extends ActivityBase {
 
     private String user_id = "JJUSER";
     private String response = "a";
-
     private SharedP sharedP;
     private Integer id_ask = 0;
     private TextView ask_label;
-
     private Button btn_a;
     private Button btn_b;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        this.sharedP = new SharedP(this);
-
         setContentView(R.layout.activity_ask);
 
-        sharedP = new SharedP(this);
+        this.sharedP = new SharedP(this);
         this.user_id = sharedP.getUserId();
-
 
         bindView();
     }
 
     private void bindView() {
-
         this.ask_label = findViewById(R.id.ask_label);
 
         this.btn_a = findViewById(R.id.btn_a);
@@ -73,7 +66,7 @@ public class AskActivity extends ActivityBase {
         this.categoryId = this.sharedP.getCategoryId();
         api.getAverageMeAsk(this.user_id, this.categoryId, new ResultatCallback<Ask>() {
             @Override
-            public void onWaitingResultat(Ask ask) {
+            public void onWaitingResult(Ask ask) {
                 load_ask(ask);
             }
         });
@@ -85,7 +78,7 @@ public class AskActivity extends ActivityBase {
         this.response = response;
         api.updateAverageMeAsk(this.id_ask, response, new ResultatCallback<RetourUpdate>() {
             @Override
-            public void onWaitingResultat(RetourUpdate result) {
+            public void onWaitingResult(RetourUpdate result) {
                 goto_answer();
             }
         });
