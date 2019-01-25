@@ -98,7 +98,6 @@ public class AskActivity extends ActivityBase {
         navigate(AnswerActivity.class, bundle);
     }
 
-
     private void load_ask(Ask ask) {
         this.sharedP.setCurrentAsk(ask);
         this.id_ask = ask.getId_ask();
