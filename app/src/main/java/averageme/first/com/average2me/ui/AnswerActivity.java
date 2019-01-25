@@ -14,19 +14,17 @@ import averageme.first.com.average2me.ui.reusable.ActivityBase;
 public class AnswerActivity extends ActivityBase {
 
     private Ask ask;
+    private String response;
 
     SharedP sharedP;
-
     TextView a;
     TextView b;
     TextView va;
     TextView vb;
     TextView ask_label;
-
     Button btn_next;
     Button btn_back_to_menu;
 
-    private String response;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +40,10 @@ public class AnswerActivity extends ActivityBase {
         sharedP = new SharedP(this);
         this.ask = sharedP.getCurrentAsk();
 
-
         bindView();
     }
 
     private void bindView() {
-
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
 
@@ -56,7 +52,6 @@ public class AnswerActivity extends ActivityBase {
 
         this.b = findViewById(R.id.b);
         this.b.setText(ask.getReponse_b());
-
 
         Integer valeur_a = ask.getNb_a();
         Integer valeur_b = ask.getNb_b();
