@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "509532992427",
+    "firebase_url": "https://averageme-a70bd.firebaseio.com",
+    "project_id": "averageme-a70bd",
+    "storage_bucket": "averageme-a70bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509532992427:android:3b46d27c83e525d0",
+        "android_client_info": {
+          "package_name": "averageme.first.com.average2me"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509532992427-uvnl1059hq42cqtq5ut9e14hackrvdoh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBijxsmnYwiy4TT4bgNCiuQrmfWCVikftA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
