@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
-
 import averageme.first.com.average2me.models.Ask;
 
 public class SharedP {
