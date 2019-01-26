@@ -13,6 +13,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -101,11 +102,14 @@ public class AnswerActivity extends ActivityBase {
             colors.add(c);
 
         set.setColors(colors);
-        set.setValueTextSize(16);
-        set.setValueTextColor(R.color.my_white);
-        set.setSliceSpace(15);
+        set.setValueTextSize(16); //sets the value on slices pie - number
+        //set.setValueTextColor(R.color.my_white);
+        set.setSliceSpace(15); //sets the space between slices
+
+        pieChart.setHoleColor(getResources().getColor(R.color.main_background)); //sets the Hole center of the pie
 
         PieData data = new PieData(set);
+        data.setValueFormatter(new PercentFormatter());
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
 
