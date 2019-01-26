@@ -63,11 +63,11 @@ public class AnswerActivity extends ActivityBase {
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
 
-        this.a = findViewById(R.id.a);
+/*        this.a = findViewById(R.id.a);
         this.a.setText(ask.getReponse_a());
 
         this.b = findViewById(R.id.b);
-        this.b.setText(ask.getReponse_b());
+        this.b.setText(ask.getReponse_b());*/
 
         Integer valeur_a = ask.getNb_a();
         Integer valeur_b = ask.getNb_b();
@@ -75,11 +75,11 @@ public class AnswerActivity extends ActivityBase {
         if(response.equals("a")) valeur_a++;
         else valeur_b++;
 
-        this.va = findViewById(R.id.va);
+/*        this.va = findViewById(R.id.va);
         this.va.setText(String.valueOf(valeur_a));
 
         this.vb = findViewById(R.id.vb);
-        this.vb.setText(String.valueOf(valeur_b));
+        this.vb.setText(String.valueOf(valeur_b));*/
 
         this.pieChart = findViewById(R.id.pieChart);
         List<PieEntry> entries = new ArrayList<>();
