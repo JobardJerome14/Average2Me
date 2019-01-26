@@ -84,34 +84,26 @@ public class AnswerActivity extends ActivityBase {
         this.pieChart = findViewById(R.id.pieChart);
         List<PieEntry> entries = new ArrayList<>();
 
+        float repA = 100*valeur_a.floatValue()/(valeur_a+valeur_b);
+        float repB = 100*valeur_b.floatValue()/(valeur_a+valeur_b);
 
-        entries.add(new PieEntry(35.0f, "Green"));
-        entries.add(new PieEntry(65.0f, "Red"));
+        entries.add(new PieEntry(repA, ask.getReponse_a()));
+        entries.add(new PieEntry(repB, ask.getReponse_b()));
 
         PieDataSet set = new PieDataSet(entries, "Pie Results");
 
         // add a lot of colors
         ArrayList<Integer> colors = new ArrayList<Integer>();
-/*      for (int c : ColorTemplate.VORDIPLOM_COLORS)
-            colors.add(c);*/
-
         for (int c : ColorTemplate.JOYFUL_COLORS)
             colors.add(c);
 
         for (int c : ColorTemplate.COLORFUL_COLORS)
             colors.add(c);
 
-/*        for (int c : ColorTemplate.LIBERTY_COLORS)
-            colors.add(c);*/
-
-/*        for (int c : ColorTemplate.PASTEL_COLORS)
-            colors.add(c);*/
-
-/*
-        colors.add(ColorTemplate.getHoloBlue());
-*/
-
         set.setColors(colors);
+        set.setValueTextSize(16);
+        set.setValueTextColor(R.color.my_white);
+        set.setSliceSpace(15);
 
         PieData data = new PieData(set);
         pieChart.setData(data);
