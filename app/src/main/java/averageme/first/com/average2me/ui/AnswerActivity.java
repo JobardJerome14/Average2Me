@@ -102,14 +102,17 @@ public class AnswerActivity extends ActivityBase {
             colors.add(c);
 
         set.setColors(colors);
+
         set.setValueTextSize(16); //sets the value on slices pie - number
-        //set.setValueTextColor(R.color.my_white);
-        set.setSliceSpace(15); //sets the space between slices
+        set.setValueTextColor(getResources().getColor(R.color.my_white)); //TODO
+        //set.setValueLineColor(getResources().getColor(R.color.btn_3_background));
+        set.setSliceSpace(12); //sets the space between slices
 
         pieChart.setHoleColor(getResources().getColor(R.color.main_background)); //sets the Hole center of the pie
 
         PieData data = new PieData(set);
         data.setValueFormatter(new PercentFormatter());
+        //data.setValueTextColor(getResources().getColor(R.color.btn_3_background));
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
 
