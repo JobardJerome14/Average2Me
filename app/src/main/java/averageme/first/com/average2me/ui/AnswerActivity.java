@@ -3,7 +3,6 @@ package averageme.first.com.average2me.ui;
 import android.content.Intent;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +15,6 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +24,6 @@ import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.models.Ask;
 import averageme.first.com.average2me.ui.reusable.ActivityBase;
-import averageme.first.com.average2me.ui.reusable.LogUtils;
 
 public class AnswerActivity extends ActivityBase {
 
@@ -35,10 +32,6 @@ public class AnswerActivity extends ActivityBase {
     private PieChart pieChart;
 
     SharedP sharedP;
-    TextView a;
-    TextView b;
-    TextView va;
-    TextView vb;
     TextView ask_label;
     Button btn_next;
     Button btn_back_to_menu;
@@ -73,27 +66,14 @@ public class AnswerActivity extends ActivityBase {
         mAdView.loadAd(adRequest);
 
 
-
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
-
-/*        this.a = findViewById(R.id.a);
-        this.a.setText(ask.getReponse_a());
-
-        this.b = findViewById(R.id.b);
-        this.b.setText(ask.getReponse_b());*/
 
         Integer valeur_a = ask.getNb_a();
         Integer valeur_b = ask.getNb_b();
 
         if(response.equals("a")) valeur_a++;
         else valeur_b++;
-
-/*        this.va = findViewById(R.id.va);
-        this.va.setText(String.valueOf(valeur_a));
-
-        this.vb = findViewById(R.id.vb);
-        this.vb.setText(String.valueOf(valeur_b));*/
 
         this.pieChart = findViewById(R.id.pieChart);
         List<PieEntry> entries = new ArrayList<>();

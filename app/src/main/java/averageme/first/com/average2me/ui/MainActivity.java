@@ -31,8 +31,6 @@ public class MainActivity extends ActivityBase {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         this.sharedP = new SharedP(this);
         if (this.sharedP.getUserId().isEmpty()) {
             this.sharedP.setUserId(UUID.randomUUID().toString());

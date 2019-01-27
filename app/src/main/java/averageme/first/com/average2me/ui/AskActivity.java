@@ -64,7 +64,6 @@ public class AskActivity extends ActivityBase {
                 .build());
 
 
-
         this.ask_label = findViewById(R.id.ask_label);
 
         this.btn_a = findViewById(R.id.btn_a);
@@ -91,9 +90,7 @@ public class AskActivity extends ActivityBase {
             load_ask(askList.getAsk(id));
         }
 
-
     }
-
 
 
     private void get_grille_via_api() {
