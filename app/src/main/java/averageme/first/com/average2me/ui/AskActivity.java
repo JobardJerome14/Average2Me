@@ -10,8 +10,10 @@ import averageme.first.com.average2me.api.API;
 import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.api.helpers.ResultatCallback;
 import averageme.first.com.average2me.models.Ask;
+import averageme.first.com.average2me.models.AskList;
 import averageme.first.com.average2me.models.RetourUpdate;
 import averageme.first.com.average2me.ui.reusable.ActivityBase;
+import averageme.first.com.average2me.ui.reusable.LogUtils;
 
 public class AskActivity extends ActivityBase {
 
@@ -56,7 +58,13 @@ public class AskActivity extends ActivityBase {
             }
         });
 
-        get_grille_via_api();
+        if(this.sharedP.getReloadApi() == 1) {
+            get_grille_via_api();
+        } else {
+            AskList askList = this.sharedP.getCurrentAskList();
+            Integer id = askList.getAnswered();
+            load_ask(askList.getAsk(id));
+        }
     }
 
 
@@ -64,18 +72,40 @@ public class AskActivity extends ActivityBase {
         API api = new API();
 
         this.categoryId = this.sharedP.getCategoryId();
-        api.getAverageMeAsk(this.user_id, this.categoryId, new ResultatCallback<Ask>() {
+        api.getAverageMeAsk(this.user_id, this.categoryId, new ResultatCallback<AskList>() {
             @Override
-            public void onWaitingResult(Ask ask) {
-                load_ask(ask);
+            public void onWaitingResult(AskList askList) {
+                askList.setAnswered(0);
+                save_currentAskList(askList);
+                set_shp_reload_api(0);
+                load_ask(askList.getAsk(0));
             }
         });
+    }
+
+    private void save_currentAskList(AskList askList) {
+        this.sharedP.setCurrentAskList(askList);
+    }
+
+    private void set_shp_reload_api(Integer reloadApi) {
+        this.sharedP.setReloadApi(reloadApi);
     }
 
 
     private void upd_grille_via_api(String response) {
         API api = new API();
         this.response = response;
+        AskList askList = this.sharedP.getCurrentAskList();
+        Integer answered = askList.getAnswered();
+        answered = answered + 1; //TODO
+        askList.setAnswered(answered);
+        this.sharedP.setCurrentAskList(askList);
+
+        if(answered == 3) {
+            //need to call api for next question
+            this.sharedP.setReloadApi(1);
+
+        }
         api.updateAverageMeAsk(this.id_ask, response, new ResultatCallback<RetourUpdate>() {
             @Override
             public void onWaitingResult(RetourUpdate result) {
