@@ -1,9 +1,7 @@
 package averageme.first.com.average2me.ui;
 
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,12 +13,13 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.models.Ask;
@@ -41,6 +40,7 @@ public class AnswerActivity extends ActivityBase {
     Button btn_next;
     Button btn_back_to_menu;
 
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,12 @@ public class AnswerActivity extends ActivityBase {
     }
 
     private void bindView() {
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mAdView.loadAd(adRequest);
 
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
@@ -105,14 +111,12 @@ public class AnswerActivity extends ActivityBase {
 
         set.setValueTextSize(16); //sets the value on slices pie - number
         set.setValueTextColor(getResources().getColor(R.color.my_white)); //TODO
-        //set.setValueLineColor(getResources().getColor(R.color.btn_3_background));
         set.setSliceSpace(12); //sets the space between slices
 
         pieChart.setHoleColor(getResources().getColor(R.color.main_background)); //sets the Hole center of the pie
 
         PieData data = new PieData(set);
         data.setValueFormatter(new PercentFormatter());
-        //data.setValueTextColor(getResources().getColor(R.color.btn_3_background));
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
 

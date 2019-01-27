@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.API;
 import averageme.first.com.average2me.api.SharedP;
@@ -27,6 +30,8 @@ public class AskActivity extends ActivityBase {
     private Button btn_a;
     private Button btn_b;
 
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,13 @@ public class AskActivity extends ActivityBase {
     }
 
     private void bindView() {
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mAdView.loadAd(adRequest);
+
+
         this.ask_label = findViewById(R.id.ask_label);
 
         this.btn_a = findViewById(R.id.btn_a);
@@ -65,6 +77,8 @@ public class AskActivity extends ActivityBase {
             Integer id = askList.getAnswered();
             load_ask(askList.getAsk(id));
         }
+
+
     }
 
 
