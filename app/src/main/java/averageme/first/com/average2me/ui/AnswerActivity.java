@@ -3,6 +3,7 @@ package averageme.first.com.average2me.ui;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.models.Ask;
 import averageme.first.com.average2me.ui.reusable.ActivityBase;
+import averageme.first.com.average2me.ui.reusable.LogUtils;
 
 public class AnswerActivity extends ActivityBase {
 
@@ -41,6 +44,8 @@ public class AnswerActivity extends ActivityBase {
     Button btn_back_to_menu;
 
     private AdView mAdView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +71,8 @@ public class AnswerActivity extends ActivityBase {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
+
 
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
@@ -145,4 +152,7 @@ public class AnswerActivity extends ActivityBase {
     private void goto_menu() {
         navigate(MainActivity.class, null);
     }
+
+
+
 }

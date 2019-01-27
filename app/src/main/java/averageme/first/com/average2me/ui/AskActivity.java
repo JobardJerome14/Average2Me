@@ -1,12 +1,14 @@
 package averageme.first.com.average2me.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.API;
@@ -32,6 +34,9 @@ public class AskActivity extends ActivityBase {
 
     private AdView mAdView;
 
+    private InterstitialAd mInterstitialAd;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +55,14 @@ public class AskActivity extends ActivityBase {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //TODO ADMOB
+        mInterstitialAd.loadAd(new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build());
+
 
 
         this.ask_label = findViewById(R.id.ask_label);
@@ -80,6 +93,7 @@ public class AskActivity extends ActivityBase {
 
 
     }
+
 
 
     private void get_grille_via_api() {
@@ -118,7 +132,7 @@ public class AskActivity extends ActivityBase {
         if(answered == 3) {
             //need to call api for next question
             this.sharedP.setReloadApi(1);
-
+            load_interstitiel();
         }
         api.updateAverageMeAsk(this.id_ask, response, new ResultatCallback<RetourUpdate>() {
             @Override
@@ -126,6 +140,21 @@ public class AskActivity extends ActivityBase {
                 goto_answer();
             }
         });
+    }
+
+
+    private void load_interstitiel() {
+        Integer test = this.sharedP.getReloadApi();
+        Log.i("getReloadApi", String.valueOf(test));
+
+        if( test == 1) {
+            if (mInterstitialAd.isLoaded()) {
+                Log.i("getReloadApi isLoaded", String.valueOf(test));
+                mInterstitialAd.show();
+            } else {
+                LogUtils.log("getReloadApi not Loaded", "The interstitial wasn't loaded yet.");
+            }
+        }
     }
 
     private void goto_answer() {
