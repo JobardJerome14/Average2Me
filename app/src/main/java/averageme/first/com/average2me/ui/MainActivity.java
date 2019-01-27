@@ -30,6 +30,8 @@ public class MainActivity extends ActivityBase {
         if (this.sharedP.getUserId().isEmpty()) {
             this.sharedP.setUserId(UUID.randomUUID().toString());
         }
+
+        this.sharedP.setReloadApi(1);
         bindView();
     }
 
