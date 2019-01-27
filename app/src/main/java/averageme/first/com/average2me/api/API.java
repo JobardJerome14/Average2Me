@@ -8,6 +8,7 @@ import averageme.first.com.average2me.R;
 
 import averageme.first.com.average2me.api.helpers.ResultatCallback;
 import averageme.first.com.average2me.models.Ask;
+import averageme.first.com.average2me.models.AskList;
 import averageme.first.com.average2me.models.RetourUpdate;
 
 import averageme.first.com.average2me.ui.reusable.MyApplication;
@@ -44,22 +45,22 @@ public class API {
 
     }
 
-    public void getAverageMeAsk(String user_id, String category, final ResultatCallback<Ask> resultatCallback) {
-        Call<Ask> call = this.iApi.getAverageMeAsk(user_id, category);
+    public void getAverageMeAsk(String user_id, String category, final ResultatCallback<AskList> resultCallback) {
+        Call<AskList> call = this.iApi.getAverageMeAsk(user_id, category);
 
-        call.enqueue(new Callback<Ask>() {
+        call.enqueue(new Callback<AskList>() {
             @Override
-            public void onResponse(@NonNull Call<Ask> call, @NonNull Response<Ask> response) {
+            public void onResponse(@NonNull Call<AskList> call, @NonNull Response<AskList> response) {
                 if (response.isSuccessful()) {
-                    Ask ask = response.body();
-                    resultatCallback.onWaitingResult(ask);
+                    AskList askList = response.body();
+                    resultCallback.onWaitingResult(askList);
                 } else {
                     report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<Ask> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<AskList> call, @NonNull Throwable t) {
                 report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
                 Toast.makeText(MyApplication.getContext(), R.string.api_new_game_impossible, Toast.LENGTH_SHORT).show();
             }
@@ -67,7 +68,7 @@ public class API {
 
     }
 
-    public void updateAverageMeAsk(Integer ask_id, String rep, final ResultatCallback<RetourUpdate> resultatCallback) {
+    public void updateAverageMeAsk(Integer ask_id, String rep, final ResultatCallback<RetourUpdate> resultCallback) {
         Call<RetourUpdate> call = this.iApi.updateAverageMeAsk(ask_id, rep);
 
         call.enqueue(new Callback<RetourUpdate>() {
@@ -75,7 +76,7 @@ public class API {
             public void onResponse(@NonNull Call<RetourUpdate> call, @NonNull Response<RetourUpdate> response) {
                 if (response.isSuccessful()) {
                     RetourUpdate retourUpdate = response.body();
-                    resultatCallback.onWaitingResult(retourUpdate);
+                    resultCallback.onWaitingResult(retourUpdate);
                 } else {
                     report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
