@@ -19,7 +19,8 @@
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/ask_activity_title"/>
+        android:text="@string/ask_activity_title"
+        android:textColor="@color/my_white"/>
 
 
     <TextView
@@ -30,6 +31,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_label"
         android:gravity="center"
+        android:textColor="@color/my_white"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
