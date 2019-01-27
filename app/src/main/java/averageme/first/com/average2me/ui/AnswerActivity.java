@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -15,11 +14,8 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.models.Ask;
@@ -87,7 +83,7 @@ public class AnswerActivity extends ActivityBase {
         PieDataSet set = new PieDataSet(entries, "Pie Results");
 
         // add a lot of colors
-        ArrayList<Integer> colors = new ArrayList<Integer>();
+        ArrayList<Integer> colors = new ArrayList<>();
         for (int c : ColorTemplate.JOYFUL_COLORS)
             colors.add(c);
 
@@ -97,7 +93,7 @@ public class AnswerActivity extends ActivityBase {
         set.setColors(colors);
 
         set.setValueTextSize(16); //sets the value on slices pie - number
-        set.setValueTextColor(getResources().getColor(R.color.my_white)); //TODO
+        set.setValueTextColor(getResources().getColor(R.color.my_white));
         set.setSliceSpace(12); //sets the space between slices
 
         pieChart.setHoleColor(getResources().getColor(R.color.main_background)); //sets the Hole center of the pie

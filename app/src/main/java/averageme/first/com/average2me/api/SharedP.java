@@ -2,11 +2,7 @@ package averageme.first.com.average2me.api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
-
 import averageme.first.com.average2me.models.Ask;
 import averageme.first.com.average2me.models.AskList;
 

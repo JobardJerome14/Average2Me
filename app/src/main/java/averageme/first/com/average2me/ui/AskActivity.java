@@ -5,11 +5,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.API;
 import averageme.first.com.average2me.api.SharedP;
@@ -122,7 +120,7 @@ public class AskActivity extends ActivityBase {
         this.response = response;
         AskList askList = this.sharedP.getCurrentAskList();
         Integer answered = askList.getAnswered();
-        answered = answered + 1; //TODO
+        answered = answered + 1;
         askList.setAnswered(answered);
         this.sharedP.setCurrentAskList(askList);
 

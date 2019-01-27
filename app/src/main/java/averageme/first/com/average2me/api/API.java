@@ -2,20 +2,13 @@ package averageme.first.com.average2me.api;
 
 import android.support.annotation.NonNull;
 import android.widget.Toast;
-
 import averageme.first.com.average2me.R;
-
-
 import averageme.first.com.average2me.api.helpers.ResultatCallback;
-import averageme.first.com.average2me.models.Ask;
 import averageme.first.com.average2me.models.AskList;
 import averageme.first.com.average2me.models.RetourUpdate;
-
 import averageme.first.com.average2me.ui.reusable.MyApplication;
 import averageme.first.com.average2me.helpers.FBevent;
 import averageme.first.com.average2me.helpers.IFBEvent;
-
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -47,7 +40,6 @@ public class API {
 
     public void getAverageMeAsk(String user_id, String category, final ResultatCallback<AskList> resultCallback) {
         Call<AskList> call = this.iApi.getAverageMeAsk(user_id, category);
-
         call.enqueue(new Callback<AskList>() {
             @Override
             public void onResponse(@NonNull Call<AskList> call, @NonNull Response<AskList> response) {
@@ -70,7 +62,6 @@ public class API {
 
     public void updateAverageMeAsk(Integer ask_id, String rep, final ResultatCallback<RetourUpdate> resultCallback) {
         Call<RetourUpdate> call = this.iApi.updateAverageMeAsk(ask_id, rep);
-
         call.enqueue(new Callback<RetourUpdate>() {
             @Override
             public void onResponse(@NonNull Call<RetourUpdate> call, @NonNull Response<RetourUpdate> response) {
@@ -78,22 +69,20 @@ public class API {
                     RetourUpdate retourUpdate = response.body();
                     resultCallback.onWaitingResult(retourUpdate);
                 } else {
-                    report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
+                    report_firebase_API_crash(IFBEvent.API_UPDATE_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<RetourUpdate> call, @NonNull Throwable t) {
-                report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
+                report_firebase_API_crash(IFBEvent.API_UPDATE_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
                 Toast.makeText(MyApplication.getContext(), R.string.api_new_game_impossible, Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
 
     private void report_firebase_API_crash(String key, String value) {
-        //TODO
         new FBevent(MyApplication.getContext(), IFBEvent.CRASH_EVENT, key, value);
     }
 

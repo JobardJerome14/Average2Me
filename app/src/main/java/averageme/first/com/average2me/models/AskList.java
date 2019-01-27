@@ -10,7 +10,6 @@ public class AskList {
 
     private Integer answered=0;
 
-
     public AskList(ArrayList<Ask> askArrayList) {
         this.askArrayList = askArrayList;
         this.answered = 0;
