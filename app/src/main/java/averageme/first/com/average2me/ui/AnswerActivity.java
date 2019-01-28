@@ -62,7 +62,6 @@ public class AnswerActivity extends ActivityBase {
                 .build();
         mAdView.loadAd(adRequest);
 
-
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
 
@@ -101,9 +100,6 @@ public class AnswerActivity extends ActivityBase {
 
         PieData data = new PieData(set);
         data.setValueFormatter(new PercentFormatter());
-/*        Description desc = new Description();
-        desc.setText("");
-        pieChart.setDescription(desc);*/
         pieChart.getDescription().setEnabled(false);
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
