@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -17,6 +19,7 @@ import averageme.first.com.average2me.models.AskList;
 import averageme.first.com.average2me.models.RetourUpdate;
 import averageme.first.com.average2me.ui.reusable.ActivityBase;
 import averageme.first.com.average2me.ui.reusable.LogUtils;
+import averageme.first.com.average2me.ui.reusable.MyApplication;
 
 public class AskActivity extends ActivityBase {
 
@@ -56,7 +59,7 @@ public class AskActivity extends ActivityBase {
 
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //TODO ADMOB
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.avg_interstitial));
         mInterstitialAd.loadAd(new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build());
@@ -127,7 +130,7 @@ public class AskActivity extends ActivityBase {
         if(answered == 3) {
             //need to call api for next question
             this.sharedP.setReloadApi(1);
-            load_interstitiel();
+            load_interstitial();
         }
         api.updateAverageMeAsk(this.id_ask, response, new ResultatCallback<RetourUpdate>() {
             @Override
@@ -138,7 +141,7 @@ public class AskActivity extends ActivityBase {
     }
 
 
-    private void load_interstitiel() {
+    private void load_interstitial() {
         Integer test = this.sharedP.getReloadApi();
         Log.i("getReloadApi", String.valueOf(test));
 
@@ -147,8 +150,10 @@ public class AskActivity extends ActivityBase {
                 Log.i("getReloadApi isLoaded", String.valueOf(test));
                 mInterstitialAd.show();
             } else {
-                LogUtils.log("getReloadApi not Loaded", "The interstitial wasn't loaded yet.");
+                Log.d("getReloadApi", "not loaded");
             }
+        } else {
+            Log.d("getReloadApi", "test not equal to 1");
         }
     }
 

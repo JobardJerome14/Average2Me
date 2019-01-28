@@ -24,4 +24,17 @@
     <!-- API Toasts -->
     <string name="api_new_game_impossible">Chargement nouvelle partie impossible</string>
 
+
+
+    <!-- AdMod App Id -->
+    <string name="avg_app_id">ca-app-pub-3940256099942544~3347511713</string> <!--TODO ADMOB -->
+
+    <!-- AdMob Add Id -->
+    <string name="avg_banner">ca-app-pub-3940256099942544/6300978111</string> <!--TODO ADMOB -->
+    <string name="avg_interstitial">ca-app-pub-3940256099942544/1033173712</string> <!--TODO ADMOB -->
+
+
+
+
+
 </resources>
