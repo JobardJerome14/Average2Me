@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -80,7 +81,7 @@ public class AnswerActivity extends ActivityBase {
         entries.add(new PieEntry(repA, ask.getReponse_a()));
         entries.add(new PieEntry(repB, ask.getReponse_b()));
 
-        PieDataSet set = new PieDataSet(entries, "Pie Results");
+        PieDataSet set = new PieDataSet(entries, "");
 
         // add a lot of colors
         ArrayList<Integer> colors = new ArrayList<>();
@@ -100,6 +101,10 @@ public class AnswerActivity extends ActivityBase {
 
         PieData data = new PieData(set);
         data.setValueFormatter(new PercentFormatter());
+/*        Description desc = new Description();
+        desc.setText("");
+        pieChart.setDescription(desc);*/
+        pieChart.getDescription().setEnabled(false);
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
 
