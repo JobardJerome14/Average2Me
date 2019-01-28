@@ -126,6 +126,7 @@ public class AnswerActivity extends ActivityBase {
     }
 
     private void goto_menu() {
+        //TODO interstitiel before back to Menu
         navigate(MainActivity.class, null);
     }
 
