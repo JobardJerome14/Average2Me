@@ -18,8 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.SharedP;
+import averageme.first.com.average2me.helpers.FBevent;
+import averageme.first.com.average2me.helpers.IFBEvent;
 import averageme.first.com.average2me.models.Ask;
 import averageme.first.com.average2me.ui.reusable.ActivityBase;
+import averageme.first.com.average2me.ui.reusable.LogUtils;
 
 public class AnswerActivity extends ActivityBase {
 
@@ -123,11 +126,17 @@ public class AnswerActivity extends ActivityBase {
 
     private void goto_ask() {
         navigate(AskActivity.class, null);
+
+        LogUtils.log("FBEvent", IFBEvent.CLICK_EVENT+ " " + IFBEvent.BUTTON_KEY + " next_question");
+        new FBevent(this, IFBEvent.CLICK_EVENT, IFBEvent.BUTTON_KEY, "next_question");
     }
 
     private void goto_menu() {
-        //TODO interstitiel before back to Menu
+        //TODO interstitial before back to Menu
         navigate(MainActivity.class, null);
+
+        LogUtils.log("FBEvent", IFBEvent.CLICK_EVENT+ " " + IFBEvent.BUTTON_KEY + " goto_menu");
+        new FBevent(this, IFBEvent.CLICK_EVENT, IFBEvent.BUTTON_KEY, "goto_menu");
     }
 
 

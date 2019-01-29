@@ -1,6 +1,7 @@
 package averageme.first.com.average2me.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,6 +15,7 @@ import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.helpers.FBevent;
 import averageme.first.com.average2me.helpers.IFBEvent;
 import averageme.first.com.average2me.ui.reusable.ActivityBase;
+import averageme.first.com.average2me.ui.reusable.LogUtils;
 
 
 public class MainActivity extends ActivityBase {
@@ -84,9 +86,12 @@ public class MainActivity extends ActivityBase {
 
     public void play_average(String categoryId) {
         this.sharedP.setCategoryId(categoryId);
+        LogUtils.log("FBEvent", IFBEvent.CLICK_EVENT+ " " + IFBEvent.BUTTON_KEY + " " + categoryId);
+        new FBevent(this, IFBEvent.CLICK_EVENT, IFBEvent.BUTTON_KEY, "main_menu_"+categoryId);
+        Log.d("FBEvent test, ", "test ceci est un test");
         navigate(AskActivity.class, null);
 
-        new FBevent(this, IFBEvent.CLICK_EVENT, IFBEvent.BUTTON_KEY, "ask_activity");
+
     }
 
 }
