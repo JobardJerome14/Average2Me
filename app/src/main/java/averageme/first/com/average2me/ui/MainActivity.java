@@ -88,7 +88,6 @@ public class MainActivity extends ActivityBase {
         this.sharedP.setCategoryId(categoryId);
         LogUtils.log("FBEvent", IFBEvent.CLICK_EVENT+ " " + IFBEvent.BUTTON_KEY + " " + categoryId);
         new FBevent(this, IFBEvent.CLICK_EVENT, IFBEvent.BUTTON_KEY, "main_menu_"+categoryId);
-        Log.d("FBEvent test, ", "test ceci est un test");
         navigate(AskActivity.class, null);
 
 
