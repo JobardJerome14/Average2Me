@@ -18,8 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.AskActivity" />
-        <activity android:name=".ui.AnswerActivity" />
+        <activity android:name=".ui.AskActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.AnswerActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
