@@ -28,7 +28,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cl_layout"
         android:text="@string/answer_activity_title"
-        android:textColor="@color/my_white"
+        android:textColor="@color/my_grey"
         android:gravity="center"
         android:layout_marginBottom="12dp"
         android:layout_marginTop="55dp"
@@ -41,7 +41,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answer"
         android:layout_margin="@dimen/normal_size"
-        android:textColor="@color/my_white"
+        android:textColor="@color/my_grey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

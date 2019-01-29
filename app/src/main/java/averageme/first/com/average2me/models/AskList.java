@@ -20,7 +20,10 @@ public class AskList {
     }
 
     public Ask getAsk(Integer id) {
-        return askArrayList.get(id);
+        if(askArrayList.size()>0)
+            return askArrayList.get(id);
+        else
+            return null;
     }
 
     public Integer getAnswered() {

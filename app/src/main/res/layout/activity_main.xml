@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="@dimen/normal_size"
         android:text="@string/main_activity_title"
-        android:textColor="@color/my_white"/>
+        android:textColor="@color/my_grey"/>
 
 
     <LinearLayout

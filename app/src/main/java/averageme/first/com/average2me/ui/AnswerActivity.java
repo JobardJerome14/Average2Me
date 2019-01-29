@@ -79,8 +79,8 @@ public class AnswerActivity extends ActivityBase {
         float repA = 100*valeur_a.floatValue()/(valeur_a+valeur_b);
         float repB = 100*valeur_b.floatValue()/(valeur_a+valeur_b);
 
-        entries.add(new PieEntry(repA, ask.getReponse_a()));
-        entries.add(new PieEntry(repB, ask.getReponse_b()));
+        entries.add(new PieEntry(repA, ""));
+        entries.add(new PieEntry(repB, "")); //label to set text on the pie
 
         PieDataSet set = new PieDataSet(entries, "");
 
@@ -95,7 +95,7 @@ public class AnswerActivity extends ActivityBase {
         set.setColors(colors);
 
         set.setValueTextSize(16); //sets the value on slices pie - number
-        set.setValueTextColor(getResources().getColor(R.color.my_white));
+        set.setValueTextColor(getResources().getColor(R.color.my_grey));
         set.setSliceSpace(12); //sets the space between slices
 
         pieChart.setHoleColor(getResources().getColor(R.color.main_background)); //sets the Hole center of the pie
