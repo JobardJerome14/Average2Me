@@ -79,8 +79,8 @@ public class AnswerActivity extends ActivityBase {
         float repA = 100*valeur_a.floatValue()/(valeur_a+valeur_b);
         float repB = 100*valeur_b.floatValue()/(valeur_a+valeur_b);
 
-        entries.add(new PieEntry(repA, ""));
-        entries.add(new PieEntry(repB, "")); //label to set text on the pie
+        entries.add(new PieEntry(repA, ask.getReponse_a()));
+        entries.add(new PieEntry(repB, ask.getReponse_b()));
 
         PieDataSet set = new PieDataSet(entries, "");
 
@@ -103,6 +103,7 @@ public class AnswerActivity extends ActivityBase {
         PieData data = new PieData(set);
         data.setValueFormatter(new PercentFormatter());
         pieChart.getDescription().setEnabled(false);
+        pieChart.setEntryLabelColor(getResources().getColor(R.color.my_grey));
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
 
