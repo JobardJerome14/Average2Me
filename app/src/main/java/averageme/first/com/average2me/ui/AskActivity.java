@@ -130,7 +130,7 @@ public class AskActivity extends ActivityBase {
         askList.setAnswered(answered);
         this.sharedP.setCurrentAskList(askList);
 
-        if(answered == 3) {
+        if(answered == 2) { //TODO reload API after 2 answers
             //need to call api for next question
             this.sharedP.setReloadApi(1);
             load_interstitial();
@@ -151,9 +151,13 @@ public class AskActivity extends ActivityBase {
         if( test == 1) {
             if (mInterstitialAd.isLoaded()) {
                 Log.i("getReloadApi isLoaded", String.valueOf(test));
+                LogUtils.log("FBEvent", IFBEvent.LOAD_EVENT+ " " + IFBEvent.INTERSTITIAL_KEY + " ask_interstitial_isLoaded");
+                new FBevent(this, IFBEvent.LOAD_EVENT, IFBEvent.INTERSTITIAL_KEY, "ask_interstitial_isLoaded");
                 mInterstitialAd.show();
             } else {
                 Log.d("getReloadApi", "not loaded");
+                LogUtils.log("FBEvent", IFBEvent.LOAD_EVENT+ " " + IFBEvent.INTERSTITIAL_KEY + " ask_interstitial_notLoaded");
+                new FBevent(this, IFBEvent.LOAD_EVENT, IFBEvent.INTERSTITIAL_KEY, "ask_interstitial_notLoaded");
             }
         } else {
             Log.d("getReloadApi", "test not equal to 1");
@@ -171,10 +175,12 @@ public class AskActivity extends ActivityBase {
     }
 
     private void load_ask(Ask ask) {
-        this.sharedP.setCurrentAsk(ask);
-        this.id_ask = ask.getId_ask();
-        this.ask_label.setText(ask.getAsk());
-        this.btn_a.setText(ask.getReponse_a());
-        this.btn_b.setText(ask.getReponse_b());
+        if(ask != null) {
+            this.sharedP.setCurrentAsk(ask);
+            this.id_ask = ask.getId_ask();
+            this.ask_label.setText(ask.getAsk());
+            this.btn_a.setText(ask.getReponse_a());
+            this.btn_b.setText(ask.getReponse_b());
+        }
     }
 }
