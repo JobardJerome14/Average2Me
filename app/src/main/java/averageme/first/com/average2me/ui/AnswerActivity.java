@@ -2,6 +2,7 @@ package averageme.first.com.average2me.ui;
 
 import android.content.Intent;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -83,17 +84,16 @@ public class AnswerActivity extends ActivityBase {
         entries.add(new PieEntry(repB, ask.getReponse_b()));
 
         PieDataSet set = new PieDataSet(entries, "");
-
+        
         // add a lot of colors
         ArrayList<Integer> colors = new ArrayList<>();
-        for (int c : ColorTemplate.JOYFUL_COLORS)
-            colors.add(c);
+        int[] colorArray= { ColorTemplate.rgb("#FE7484"), ColorTemplate.rgb("#25f177"),};
 
-        for (int c : ColorTemplate.COLORFUL_COLORS)
+        ColorTemplate.createColors(colorArray);
+        for (int c : colorArray)
             colors.add(c);
 
         set.setColors(colors);
-
         set.setValueTextSize(16); //sets the value on slices pie - number
         set.setValueTextColor(getResources().getColor(R.color.my_grey));
         set.setSliceSpace(12); //sets the space between slices
