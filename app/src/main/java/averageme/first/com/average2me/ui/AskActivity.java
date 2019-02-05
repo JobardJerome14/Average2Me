@@ -82,6 +82,7 @@ public class AskActivity extends ActivityBase {
                 upd_grille_via_api("a");
             }
         });
+        btn_a.setVisibility(View.VISIBLE);
 
         this.btn_b = findViewById(R.id.btn_b);
         btn_b.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +91,7 @@ public class AskActivity extends ActivityBase {
                 upd_grille_via_api("b");
             }
         });
+        btn_b.setVisibility(View.VISIBLE);
 
         if(this.sharedP.getReloadApi() == 1) {
             get_grille_via_api();
@@ -105,6 +107,8 @@ public class AskActivity extends ActivityBase {
     private void get_grille_via_api() {
         API api = new API();
         spinner.setVisibility(View.VISIBLE);
+        btn_a.setVisibility(View.GONE);
+        btn_b.setVisibility(View.GONE);
         this.categoryId = this.sharedP.getCategoryId();
         api.getAverageMeAsk(this.user_id, this.categoryId, new ResultatCallback<AskList>() {
             @Override
@@ -114,6 +118,8 @@ public class AskActivity extends ActivityBase {
                 set_shp_reload_api(0);
                 load_ask(askList.getAsk(0));
                 spinner.setVisibility(View.GONE);
+                btn_a.setVisibility(View.VISIBLE);
+                btn_b.setVisibility(View.VISIBLE);
             }
         });
     }
