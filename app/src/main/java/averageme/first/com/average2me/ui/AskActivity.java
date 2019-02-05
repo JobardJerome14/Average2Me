@@ -130,7 +130,7 @@ public class AskActivity extends ActivityBase {
         askList.setAnswered(answered);
         this.sharedP.setCurrentAskList(askList);
 
-        if(answered == 2) { //TODO reload API after 2 answers
+        if(answered == 4) { //TODO reload API after 4 answers
             //need to call api for next question
             this.sharedP.setReloadApi(1);
             load_interstitial();
