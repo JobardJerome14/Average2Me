@@ -16,3 +16,5 @@ app/build/*
 keystores.jks
 app/release/*
 .idea/misc.xml
+keystore.jks
+app\debug\app-debug.apk
