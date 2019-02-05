@@ -18,3 +18,5 @@ app/release/*
 .idea/misc.xml
 keystore.jks
 app\debug\app-debug.apk
+app/debug/app-debug.apk
+app/debug/output.json
