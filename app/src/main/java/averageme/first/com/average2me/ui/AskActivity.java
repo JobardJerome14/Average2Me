@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
@@ -38,6 +39,7 @@ public class AskActivity extends ActivityBase {
     private AdView mAdView;
 
     private InterstitialAd mInterstitialAd;
+    private ProgressBar spinner;
 
 
     @Override
@@ -53,6 +55,9 @@ public class AskActivity extends ActivityBase {
     }
 
     private void bindView() {
+        this.spinner = findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
+
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
@@ -99,7 +104,7 @@ public class AskActivity extends ActivityBase {
 
     private void get_grille_via_api() {
         API api = new API();
-
+        spinner.setVisibility(View.VISIBLE);
         this.categoryId = this.sharedP.getCategoryId();
         api.getAverageMeAsk(this.user_id, this.categoryId, new ResultatCallback<AskList>() {
             @Override
@@ -108,6 +113,7 @@ public class AskActivity extends ActivityBase {
                 save_currentAskList(askList);
                 set_shp_reload_api(0);
                 load_ask(askList.getAsk(0));
+                spinner.setVisibility(View.GONE);
             }
         });
     }

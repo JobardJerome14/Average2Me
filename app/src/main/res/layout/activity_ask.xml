@@ -23,6 +23,7 @@
         ads:adUnitId="@string/avg_banner">
     </com.google.android.gms.ads.AdView>
 
+
     <TextView
         android:id="@+id/category_label"
         android:layout_width="match_parent"
@@ -36,6 +37,17 @@
         android:text="@string/ask_activity_title"
         android:textColor="@color/my_grey"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_label"
+        android:indeterminateDrawable="@drawable/circular_progress_bar"
+        android:background="@drawable/circle_shape"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/ask_label"
