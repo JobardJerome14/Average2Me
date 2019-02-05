@@ -15,5 +15,9 @@
     <color name="btn_2_background">#25f177</color>
     <color name="btn_3_background">#d274fe</color>
     <color name="btn_4_background">#feab74</color>
+    <color name="btn_5_background">#29DDEC</color>
+    <color name="btn_6_background">#FD8ED8</color>
+
+
     <color name="main_background">#E4FFEDC9</color>
 </resources>

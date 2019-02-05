@@ -25,10 +25,10 @@
         android:id="@+id/main_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adView"
+        android:layout_marginTop="140dp"
         android:textSize="@dimen/normal_size"
         android:text="@string/main_activity_title"
         android:textColor="@color/my_grey"/>
@@ -71,6 +71,26 @@
                 android:background="@color/btn_2_background"
                 android:padding="@dimen/normal_size"
                 android:text="@string/food_btn_label"
+                android:textAllCaps="false"
+                android:textColor="@color/my_white" />
+
+            <Button
+                android:id="@+id/loisir_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_5_background"
+                android:padding="@dimen/normal_size"
+                android:text="@string/loisir_btn_label"
+                android:textAllCaps="false"
+                android:textColor="@color/my_white" />
+
+            <Button
+                android:id="@+id/society_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_6_background"
+                android:padding="@dimen/normal_size"
+                android:text="@string/society_btn_label"
                 android:textAllCaps="false"
                 android:textColor="@color/my_white" />
 

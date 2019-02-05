@@ -23,6 +23,8 @@ public class MainActivity extends ActivityBase {
     Button politic_btn;
     Button sport_btn;
     Button food_btn;
+    Button loisir_btn;
+    Button society_btn;
     Button medley_btn;
     SharedP sharedP;
 
@@ -67,6 +69,23 @@ public class MainActivity extends ActivityBase {
                 play_average("2");
             }
         });
+
+        this.loisir_btn = findViewById(R.id.loisir_btn);
+        this.loisir_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play_average("4");
+            }
+        });
+
+        this.society_btn = findViewById(R.id.society_btn);
+        this.society_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play_average("5");
+            }
+        });
+
 
         this.medley_btn = findViewById(R.id.medley_btn);
         this.medley_btn.setOnClickListener(new View.OnClickListener() {

@@ -7,6 +7,8 @@
     <string name="food_btn_label">Nourriture</string>
     <string name="medley_btn_label">Mélange</string>
     <string name="politique_btn_label">Politique</string>
+    <string name="loisir_btn_label">Loisirs</string>
+    <string name="society_btn_label">Société</string>
 
 
     <!-- Ask activity -->
