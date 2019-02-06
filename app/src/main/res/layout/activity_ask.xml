@@ -45,8 +45,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_label"
-        android:indeterminateDrawable="@drawable/circular_progress_bar"
-        android:background="@drawable/circle_shape"
         android:layout_gravity="center_horizontal" />
 
     <TextView
