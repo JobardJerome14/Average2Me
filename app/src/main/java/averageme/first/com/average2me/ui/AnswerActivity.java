@@ -28,14 +28,14 @@ public class AnswerActivity extends ActivityBase {
 
     private Ask ask;
     private String response;
-    private PieChart pieChart;
+    PieChart pieChart;
 
-    SharedP sharedP;
-    TextView ask_label;
-    Button btn_next;
-    Button btn_back_to_menu;
+    private SharedP sharedP;
+    private TextView ask_label;
+    private Button btn_next;
+    private Button btn_back_to_menu;
 
-    private AdView mAdView;
+    AdView mAdView;
 
 
 
@@ -67,20 +67,20 @@ public class AnswerActivity extends ActivityBase {
         this.ask_label = findViewById(R.id.ask);
         this.ask_label.setText(ask.getAsk());
 
-        Integer valeur_a = ask.getNb_a();
-        Integer valeur_b = ask.getNb_b();
+        Integer valueA = ask.getNb_a();
+        Integer valueB = ask.getNb_b();
 
-        if(response.equals("a")) valeur_a++;
-        else valeur_b++;
+        if(response.equals("a")) valueA++;
+        else valueB++;
 
         this.pieChart = findViewById(R.id.pieChart);
         List<PieEntry> entries = new ArrayList<>();
 
-        float repA = 100*valeur_a.floatValue()/(valeur_a+valeur_b);
-        float repB = 100*valeur_b.floatValue()/(valeur_a+valeur_b);
+        float repA = 100*valueA.floatValue()/(valueA+valueB);
+        float repB = 100*valueB.floatValue()/(valueA+valueB);
 
-        entries.add(new PieEntry(repA, ask.getReponse_a()));
-        entries.add(new PieEntry(repB, ask.getReponse_b()));
+        entries.add(new PieEntry(repA, ask.getResponseA()));
+        entries.add(new PieEntry(repB, ask.getResponseB()));
 
         PieDataSet set = new PieDataSet(entries, "");
         

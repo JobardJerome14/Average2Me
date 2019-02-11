@@ -1,15 +1,11 @@
 package averageme.first.com.average2me.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import java.util.UUID;
-
 import averageme.first.com.average2me.R;
 import averageme.first.com.average2me.api.SharedP;
 import averageme.first.com.average2me.helpers.FBevent;
@@ -23,12 +19,12 @@ public class MainActivity extends ActivityBase {
     Button politic_btn;
     Button sport_btn;
     Button food_btn;
-    Button loisir_btn;
+    Button hobby_btn;
     Button society_btn;
     Button medley_btn;
     SharedP sharedP;
 
-    private AdView mAdView;
+    AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +66,8 @@ public class MainActivity extends ActivityBase {
             }
         });
 
-        this.loisir_btn = findViewById(R.id.loisir_btn);
-        this.loisir_btn.setOnClickListener(new View.OnClickListener() {
+        this.hobby_btn = findViewById(R.id.hobby_btn);
+        this.hobby_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 play_average("4");

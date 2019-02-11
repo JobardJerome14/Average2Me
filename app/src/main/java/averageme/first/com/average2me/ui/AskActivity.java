@@ -28,18 +28,18 @@ import averageme.first.com.average2me.ui.reusable.LogUtils;
 
 public class AskActivity extends ActivityBase /*implements RewardedVideoAdListener*/ {
 
-    String categoryId;
+    private String categoryId;
 
-    private String user_id = "JJUSER";
+    private String user_id = "jjUser";
     private String response = "a";
     private SharedP sharedP;
     private Integer id_ask = 0;
     private TextView ask_label;
-    TextView ask_category_label;
+    private TextView ask_category_label;
     private Button btn_a;
     private Button btn_b;
 
-    private AdView mAdView;
+    AdView mAdView;
 
     private InterstitialAd mInterstitialAd;
     private ProgressBar spinner;
@@ -160,10 +160,10 @@ public class AskActivity extends ActivityBase /*implements RewardedVideoAdListen
                 cat_id = getResources().getString(R.string.food_btn_label);
                 break;
             case "3":
-                cat_id = getResources().getString(R.string.politique_btn_label);
+                cat_id = getResources().getString(R.string.politic_btn_label);
                 break;
             case "4":
-                cat_id = getResources().getString(R.string.loisir_btn_label);
+                cat_id = getResources().getString(R.string.hobby_btn_label);
                 break;
             case "5":
                 cat_id = getResources().getString(R.string.society_btn_label);
@@ -325,8 +325,8 @@ public class AskActivity extends ActivityBase /*implements RewardedVideoAdListen
             this.sharedP.setCurrentAsk(ask);
             this.id_ask = ask.getId_ask();
             this.ask_label.setText(ask.getAsk());
-            this.btn_a.setText(ask.getReponse_a());
-            this.btn_b.setText(ask.getReponse_b());
+            this.btn_a.setText(ask.getResponseA());
+            this.btn_b.setText(ask.getResponseB());
         }
     }
 }
