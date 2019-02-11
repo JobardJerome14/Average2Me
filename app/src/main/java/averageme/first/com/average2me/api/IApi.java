@@ -17,7 +17,7 @@ public interface IApi {
     @GET("/updask")
     Call<RetourUpdate> updateAverageMeAsk(
             @Query("ask_id") Integer ask_id,
-            @Query("rep") String reponse
+            @Query("rep") String response
     );
 
 }

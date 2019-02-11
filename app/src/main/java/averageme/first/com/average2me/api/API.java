@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class API {
 
-    private IApi iApi;
+    private final IApi iApi;
 
     public API() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -47,13 +47,13 @@ public class API {
                     AskList askList = response.body();
                     resultCallback.onWaitingResult(askList);
                 } else {
-                    report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
+                    report_fb_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<AskList> call, @NonNull Throwable t) {
-                report_firebase_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
+                report_fb_API_crash(IFBEvent.API_GET_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
                 Toast.makeText(MyApplication.getContext(), R.string.api_new_game_impossible, Toast.LENGTH_SHORT).show();
             }
         });
@@ -69,20 +69,20 @@ public class API {
                     RetourUpdate retourUpdate = response.body();
                     resultCallback.onWaitingResult(retourUpdate);
                 } else {
-                    report_firebase_API_crash(IFBEvent.API_UPDATE_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
+                    report_fb_API_crash(IFBEvent.API_UPDATE_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_RESPONSE);
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<RetourUpdate> call, @NonNull Throwable t) {
-                report_firebase_API_crash(IFBEvent.API_UPDATE_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
+                report_fb_API_crash(IFBEvent.API_UPDATE_AVERAGE_ME_ASK_KEY, IFBEvent.API_ON_FAILURE);
                 Toast.makeText(MyApplication.getContext(), R.string.api_new_game_impossible, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
-    private void report_firebase_API_crash(String key, String value) {
+    private void report_fb_API_crash(String key, String value) {
         new FBevent(MyApplication.getContext(), IFBEvent.CRASH_EVENT, key, value);
     }
 
