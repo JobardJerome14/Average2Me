@@ -11,10 +11,10 @@ public class Ask {
     private String ask;
 
     @SerializedName("a")
-    private String reponse_a;
+    private String responseA;
 
     @SerializedName("b")
-    private String reponse_b;
+    private String responseB;
 
     @SerializedName("va")
     private Integer nb_a;
@@ -22,11 +22,11 @@ public class Ask {
     @SerializedName("vb")
     private Integer nb_b;
 
-    public Ask(Integer id_ask, String ask, String reponse_a, String reponse_b, Integer nb_a, Integer nb_b) {
+    public Ask(Integer id_ask, String ask, String responseA, String responseB, Integer nb_a, Integer nb_b) {
         this.id_ask = id_ask;
         this.ask = ask;
-        this.reponse_a = reponse_a;
-        this.reponse_b = reponse_b;
+        this.responseA = responseA;
+        this.responseB = responseB;
         this.nb_a = nb_a;
         this.nb_b = nb_b;
     }
@@ -39,12 +39,12 @@ public class Ask {
         return ask;
     }
 
-    public String getReponse_a() {
-        return reponse_a;
+    public String getResponseA() {
+        return responseA;
     }
 
-    public String getReponse_b() {
-        return reponse_b;
+    public String getResponseB() {
+        return responseB;
     }
 
     public Integer getNb_a() {
