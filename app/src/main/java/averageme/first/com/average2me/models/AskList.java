@@ -8,15 +8,11 @@ public class AskList {
     @SerializedName("asks")
     private ArrayList<Ask> askArrayList;
 
-    private Integer answered=0;
+    private Integer answered;
 
     public AskList(ArrayList<Ask> askArrayList) {
         this.askArrayList = askArrayList;
         this.answered = 0;
-    }
-
-    public ArrayList<Ask> getAskArrayList() {
-        return askArrayList;
     }
 
     public Ask getAsk(Integer id) {

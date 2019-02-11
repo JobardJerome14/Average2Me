@@ -7,8 +7,4 @@ public class RetourUpdate {
     @SerializedName("status")
     private String status;
 
-    public String getStatus() {
-        return status;
-    }
-
 }
