@@ -20,7 +20,7 @@ public class MyApplication extends Application {
         super.onCreate();
         application = this;
 
-        DEBUG = false; //TODO false
+        DEBUG = false;
 
         // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
         MobileAds.initialize(this,  getResources().getString(R.string.avg_app_id));

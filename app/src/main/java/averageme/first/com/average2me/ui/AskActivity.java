@@ -266,22 +266,22 @@ public class AskActivity extends ActivityBase /*implements RewardedVideoAdListen
 
 /*    private void load_video() {
         Integer test = this.sharedP.getReloadApi();
-        Log.i("load_video", String.valueOf(test));
+        //Log.i("load_video", String.valueOf(test));
 
         if( test == 1) {
             if (mAd.isLoaded()) {
-                Log.i("load_video isLoaded", String.valueOf(test));
+                //Log.i("load_video isLoaded", String.valueOf(test));
                 LogUtils.log("FBEvent", IFBEvent.LOAD_EVENT+ " " + IFBEvent.INTERSTITIAL_KEY + " ask_video_isLoaded");
                 new FBevent(this, IFBEvent.LOAD_EVENT, IFBEvent.INTERSTITIAL_KEY, "ask_video_isLoaded");
                 mAd.show();
             } else {
-                Log.d("load_video", "not loaded");
+                //Log.d("load_video", "not loaded");
                 LogUtils.log("FBEvent", IFBEvent.LOAD_EVENT+ " " + IFBEvent.INTERSTITIAL_KEY + " ask_video_notLoaded");
                 new FBevent(this, IFBEvent.LOAD_EVENT, IFBEvent.INTERSTITIAL_KEY, "ask_video_notLoaded");
                 goto_answer();
             }
         } else {
-            Log.d("load_video", "test not equal to 1");
+            //Log.d("load_video", "test not equal to 1");
             goto_answer();
         }
     }*/
@@ -289,23 +289,23 @@ public class AskActivity extends ActivityBase /*implements RewardedVideoAdListen
 
     private void load_interstitial() {
         Integer test = this.sharedP.getReloadApi();
-        Log.i("load_interstitial", String.valueOf(test));
+        //Log.i("load_interstitial", String.valueOf(test));
 
         if( test == 1) {
             if (mInterstitialAd.isLoaded()) {
-                Log.i("load isLoaded", String.valueOf(test));
+                //Log.i("load isLoaded", String.valueOf(test));
                 LogUtils.log("FBEvent", IFBEvent.LOAD_EVENT+ " " + IFBEvent.INTERSTITIAL_KEY + " ask_interstitial_isLoaded");
                 new FBevent(this, IFBEvent.LOAD_EVENT, IFBEvent.INTERSTITIAL_KEY, "ask_interstitial_isLoaded");
                 mInterstitialAd.show();
 
             } else {
-                Log.d("load_interstitial", "not loaded");
+                //Log.d("load_interstitial", "not loaded");
                 LogUtils.log("FBEvent", IFBEvent.LOAD_EVENT+ " " + IFBEvent.INTERSTITIAL_KEY + " ask_interstitial_notLoaded");
                 new FBevent(this, IFBEvent.LOAD_EVENT, IFBEvent.INTERSTITIAL_KEY, "ask_interstitial_notLoaded");
                 goto_answer();
             }
         } else {
-            Log.d("load_interstitial", "test not equal to 1");
+            //Log.d("load_interstitial", "test not equal to 1");
             goto_answer();
         }
     }
