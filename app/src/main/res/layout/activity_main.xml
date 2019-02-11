@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/btn_3_background"
                 android:padding="@dimen/normal_size"
-                android:text="@string/politique_btn_label"
+                android:text="@string/politic_btn_label"
                 android:textAllCaps="false"
                 android:textColor="@color/my_white" />
 
@@ -76,12 +76,12 @@
                 android:textColor="@color/my_white" />
 
             <Button
-                android:id="@+id/loisir_btn"
+                android:id="@+id/hobby_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/btn_5_background"
                 android:padding="@dimen/normal_size"
-                android:text="@string/loisir_btn_label"
+                android:text="@string/hobby_btn_label"
                 android:textAllCaps="false"
                 android:textColor="@color/my_white" />
 
